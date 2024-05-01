@@ -1,4 +1,6 @@
-import TreeNode.TreeNode;
+package daily_questions;
+
+import utils.TreeNode.TreeNode;
 
 public class SmallestStringStartingFromLeaf98 {
 

@@ -1,4 +1,6 @@
-import ListNode.ListNode;
+package daily_questions;
+
+import utils.ListNode.ListNode;
 
 public class MergeTwoSortedList21 {
     public static void main(String[] args) {

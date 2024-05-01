@@ -1,3 +1,5 @@
+package daily_questions;
+
 import java.util.HashMap;
 
 public class NumberOfIslands200 {

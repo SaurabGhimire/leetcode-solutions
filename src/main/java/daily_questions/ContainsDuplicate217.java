@@ -1,3 +1,5 @@
+package daily_questions;
+
 import java.util.HashSet;
 
 public class ContainsDuplicate217 {
