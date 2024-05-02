@@ -1,4 +1,4 @@
-package daily_questions;
+package dailyQuestions;
 
 import java.util.HashSet;
 

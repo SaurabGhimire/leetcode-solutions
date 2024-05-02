@@ -1,6 +1,4 @@
-package daily_questions;
-
-import java.util.Optional;
+package dailyQuestions;
 
 public class IslandPerimeter463 {
     public static void main(String[] args) {
