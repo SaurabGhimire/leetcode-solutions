@@ -16,6 +16,5 @@ public class ClimbingStairs {
         int numOfWays = dfs(num+1, n, map) + dfs(num+2, n, map);
         map.put(num, numOfWays);
         return numOfWays;
-
     }
 }
