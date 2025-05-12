@@ -6,21 +6,19 @@ public class PalindromicSubstrings {
         int count = 0;
         for(int i=0;i<s.length();i++){
             // odd length
-            int left = i;
-            int right = i;
-            while(left>=0 && right<s.length() && s.charAt(left) == s.charAt(right)){
-                count++;
-                left--;
-                right++;
-            }
+            count += countSubstrings(i, i, s);
             // even length
-            left = i;
-            right = i+1;
-            while(left>=0 && right<s.length() && s.charAt(left) == s.charAt(right)){
-                count++;
-                left--;
-                right++;
-            }
+            count += countSubstrings(i, i+1, s);
+        }
+        return count;
+    }
+
+    public int countSubstrings(int left, int right, String s){
+        int count = 0;
+        while(left>=0 && right<s.length() && s.charAt(left) == s.charAt(right)){
+            count++;
+            left--;
+            right++;
         }
         return count;
     }
