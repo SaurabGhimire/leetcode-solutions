@@ -11,8 +11,8 @@ public class MaximumProductSubarray {
             int curr = nums[i];
             int p1 = max[i-1] * curr;
             int p2 = min[i-1] * curr;
-            max[i] = Math.max(curr, Math.max(max[i - 1] * curr, min[i - 1] * curr));
-            min[i] = Math.min(curr, Math.min(max[i - 1] * curr, min[i - 1] * curr));
+            max[i] = Math.max(curr, Math.max(p1, p2));
+            min[i] = Math.min(curr, Math.min(p1, p2));
             largestProduct = Math.max(max[i], largestProduct);
         }
         return largestProduct;
