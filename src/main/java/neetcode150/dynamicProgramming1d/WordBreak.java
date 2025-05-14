@@ -25,4 +25,26 @@ public class WordBreak {
         map.put(startIndex, false);
         return false;
     }
+
+    class Solution {
+        public boolean wordBreak(String s, List<String> wordDict) {
+            boolean[] dp = new boolean[s.length()+1];
+            dp[s.length()] = true;
+            for(int i=s.length()-1;i>=0;i--){
+                boolean isValid = false;
+                for(String word: wordDict){
+                    if(isValid) break;
+                    if(i+word.length() > s.length()){
+                        continue;
+                    }
+                    String curr = s.substring(i, i+word.length());
+                    if(curr.equals(word)){
+                        isValid = dp[i+word.length()];
+                    }
+                }
+                dp[i] = isValid;
+            }
+            return dp[0];
+        }
+    }
 }
