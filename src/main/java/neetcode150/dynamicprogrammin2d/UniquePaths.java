@@ -16,4 +16,19 @@ public class UniquePaths {
         }
         return path[0][0];
     }
+
+    class Solution {
+        public int uniquePaths(int m, int n) {
+            Integer[][] path = new Integer[m][n];
+            return dfs(0, 0, path);
+        }
+
+        public int dfs(int i, int j, Integer[][] path){
+            if(i==path.length-1 && j==path[0].length-1) return 1;
+            if(i>=path.length || j>=path[0].length) return 0;
+            if(path[i][j] != null) return path[i][j];
+            path[i][j] = dfs(i+1, j, path) + dfs(i, j+1, path);
+            return path[i][j];
+        }
+    }
 }
