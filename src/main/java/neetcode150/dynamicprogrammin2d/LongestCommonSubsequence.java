@@ -19,4 +19,22 @@ public class LongestCommonSubsequence {
         memo[i][j] = Math.max(dfs(text1, text2, i+1, j, memo), dfs(text1, text2, i, j+1, memo));
         return memo[i][j];
     }
+
+    class Solution {
+        public int longestCommonSubsequence(String text1, String text2) {
+            int row = text1.length()+1;
+            int col = text2.length()+1;
+            int[][] dp = new int[row][col];
+            for(int i=row-2;i>=0;i--){
+                for(int j=col-2;j>=0;j--){
+                    if(text1.charAt(i) == text2.charAt(j)){
+                        dp[i][j] = 1+ dp[i+1][j+1];
+                    } else {
+                        dp[i][j] = Math.max(dp[i+1][j], dp[i][j+1]);
+                    }
+                }
+            }
+            return dp[0][0];
+        }
+    }
 }
