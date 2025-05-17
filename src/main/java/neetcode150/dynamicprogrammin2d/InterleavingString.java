@@ -24,4 +24,23 @@ public class InterleavingString {
         memo[i][j] = false;
         return memo[i][j];
     }
+
+    class Solution {
+        public boolean isInterleave(String s1, String s2, String s3) {
+            boolean[][] dp = new boolean[s1.length()+1][s2.length()+1];
+            if(s1.length() +s2.length() != s3.length()) return false;
+            dp[s1.length()][s2.length()] = true;
+            for(int i=s1.length();i>=0;i--){
+                for(int j=s2.length();j>=0;j--){
+                    if(i<s1.length() && s1.charAt(i) == s3.charAt(i+j)){
+                        dp[i][j] = dp[i][j] || dp[i+1][j];
+                    }
+                    if(j<s2.length() && s2.charAt(j) == s3.charAt(i+j)){
+                        dp[i][j] = dp[i][j] || dp[i][j+1];
+                    }
+                }
+            }
+            return dp[0][0];
+        }
+    }
 }
