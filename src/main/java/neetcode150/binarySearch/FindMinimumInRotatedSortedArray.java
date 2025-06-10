@@ -1,6 +1,6 @@
 package neetcode150.binarySearch;
 
-public class SearchInRotatedSortedArray {
+public class FindMinimumInRotatedSortedArray {
     public int findMin(int[] nums) {
         int left = 0;
         int right = nums.length - 1;
